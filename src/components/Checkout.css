@@ -1,17 +1,24 @@
-.chechout {
+.checkout {
   display: flex;
   padding: 20px;
   background-color: white;
   height: max-content;
 }
 
-.chechout__title {
-  margin-right: 10px;
+.checkout__add {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.checkout__title {
+  margin-right: 20px;
   padding: 10px;
   border-bottom: 1px solid lightgray;
 }
 
-.chechout__add {
-  width: 100%;
-  padding: 10px;
+@media only screen and (max-width: 780px) {
+  .checkout {
+    display: flex;
+    flex-direction: column;
+  }
 }
