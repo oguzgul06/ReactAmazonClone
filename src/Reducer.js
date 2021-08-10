@@ -1,23 +1,5 @@
 export const initialState = {
-  basket: [
-    {
-      id: "1234",
-      title:
-        "Echo Dot (4th Gen) | Smart speaker with clock and Alexa | Twilight Blue",
-      price: 11.59,
-      rating: 5,
-      image: "https://m.media-amazon.com/images/I/71b9icxgIgL._AC_UY218_.jpg",
-    },
-
-    {
-      id: "1234",
-      title:
-        "Echo Dot (4th Gen) | Smart speaker with clock and Alexa | Twilight Blue",
-      price: 11.59,
-      rating: 5,
-      image: "https://m.media-amazon.com/images/I/71b9icxgIgL._AC_UY218_.jpg",
-    },
-  ],
+  basket: [],
   user: null,
 };
 
@@ -26,6 +8,12 @@ export const getBasketTotal = (basket) =>
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
+        
+      };
     case "ADD_TO_BASKET":
       return {
         ...state,
