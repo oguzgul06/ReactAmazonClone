@@ -1,5 +1,23 @@
 export const initialState = {
-  basket: [],
+  basket: [
+    {
+      id: "1234",
+      title:
+        "Echo Dot (4th Gen) | Smart speaker with clock and Alexa | Twilight Blue",
+      price: 11.59,
+      rating: 5,
+      image: "https://m.media-amazon.com/images/I/71b9icxgIgL._AC_UY218_.jpg",
+    },
+
+    {
+      id: "1234",
+      title:
+        "Echo Dot (4th Gen) | Smart speaker with clock and Alexa | Twilight Blue",
+      price: 11.59,
+      rating: 5,
+      image: "https://m.media-amazon.com/images/I/71b9icxgIgL._AC_UY218_.jpg",
+    },
+  ],
   user: null,
 };
 
@@ -12,7 +30,18 @@ const reducer = (state, action) => {
       };
 
     case "REMOVE_FROM_BASKET":
-      return { state };
+      let newBasket = [...state.basket];
+
+      const index = state.basket.findIndex(
+        (basketItem) => basketItem.id === action.id
+      );
+
+      if (index >= 0) {
+        newBasket.splice(index, 1);
+      } else {
+      }
+
+      return { ...state, basket: newBasket };
 
     default:
       return state;
